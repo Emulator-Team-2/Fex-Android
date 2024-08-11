@@ -32,7 +32,7 @@ function termux_install
     tar -xf ubuntu.tar.xz
     mkdir -p patch
     echo -e "\e[32m[+] Downloading update patch...\e[0m"
-    wget https://github.com/AllPlatform/Fex-Android/raw/main/patch/fex-emu-armv8.4_2403.1~j_arm64.deb -O patch/update.deb
+    wget https://github.com/Emulator-Team-2/Fex-Android/raw/main/patch/fex-emu-armv8.4_2403.1~j_arm64.deb -O patch/update.deb
     wget https://raw.githubusercontent.com/AllPlatform/Fex-Android/main/patch/ThunksDB.json -O patch/ThunksDB.json
     echo -e "\e[32m[+] Apply update patch...\e[0m"
     cd patch
@@ -426,7 +426,7 @@ function wine_ver()
 	    clear
 	    mkdir ubuntu-fs64/opt/wine/wine-8.15-amd64
 	    WINE=wine-8.15-amd64
-	    wget https://github.com/Kron4ek/Wine-Builds/releases/download/8.15/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
+	    wget https://github.com/Kron4ek/Wine-Builds/releases/download/9.15/wine-9.15-amd64.tar.xz -O wine-9.15-amd64.tar.xz
 	    wget https://github.com/AllPlatform/Fex-Android/releases/download/v1.3-update/prefix-wine-8.15-amd64.tar.xz -O ubuntu-fs64/opt/wine/wine-8.15-amd64/wine.tar.xz
 	    echo -e "\e[32m[+] Completed Download $WINE ...\e[0m"
 	    echo -e "\e[32m[+] Extracting Wine $WINE\e[0m"
