@@ -407,31 +407,31 @@ function resetprefix()
 
 function wine_ver()
 {
-    _winever=$(dialog --menu "Select Wine version" 20 45 25 1 "wine-8.15-amd64 (Stable, Recommend)" 2 "wine-proton-8.0-4-amd64 (Unstable, Staging)" 3 "lutris-GE-Proton8-15-x86_64 (Unstable, Staging)" 2>&1 >/dev/tty)
+    _winever=$(dialog --menu "Select Wine version" 20 45 25 1 "wine-9.4-amd64 (Stable, Recommend)" 2 "wine-proton-8.0-4-amd64 (Unstable, Staging)" 3 "lutris-GE-Proton8-15-x86_64 (Unstable, Staging)" 2>&1 >/dev/tty)
     if [[ $? == 1 ]]; then
         wine;
     fi
     case $_winever in
     1)
-	if [ -d ubuntu-fs64/opt/wine/wine-8.15-amd64 ]; then
-	    WINE=wine-8.15-amd64
+	if [ -d ubuntu-fs64/opt/wine/wine-9.4-amd64 ]; then
+	    WINE=wine-9.4-amd64
 	    write_env
 	    resetprefix
 	    main_menu;
 	else
-	    dialog --yesno "Do you want download wine-8.15-amd64 from Kron4ek/Wine-Builds" 10 40
+	    dialog --yesno "Do you want download wine-9.4-amd64 from Kron4ek/Wine-Builds" 10 40
 	    if [[ $? == 1 ]]; then
         	wine_ver;
     	    fi
 	    clear
-	    mkdir ubuntu-fs64/opt/wine/wine-8.15-amd64
-	    WINE=wine-8.15-amd64
-	    wget https://github.com/Kron4ek/Wine-Builds/releases/download/8.15/wine-8.15-amd64.tar.xz -O wine-8.15-amd64.tar.xz
+	    mkdir ubuntu-fs64/opt/wine/wine-9.4-amd64
+	    WINE=wine-9.4-amd64.tar.xz
+	    wget https://github.com/Kron4ek/Wine-Builds/releases/download/9.4/wine-9.4-amd64.tar.xz -O wine-9.4-amd64.tar.xz
 	    wget https://github.com/AllPlatform/Fex-Android/releases/download/v1.3-update/prefix-wine-8.15-amd64.tar.xz -O ubuntu-fs64/opt/wine/wine-8.15-amd64/wine.tar.xz
 	    echo -e "\e[32m[+] Completed Download $WINE ...\e[0m"
 	    echo -e "\e[32m[+] Extracting Wine $WINE\e[0m"
-	    tar -xf wine-8.15-amd64.tar.xz -C ubuntu-fs64/opt/wine
-	    rm wine-8.15-amd64.tar.xz
+	    tar -xf wine-9.4-amd64.tar.xz -C ubuntu-fs64/opt/wine
+	    rm wine-9.4-amd64.tar.xz
             write_env
             resetprefix
             main_menu;
