@@ -32,7 +32,7 @@ function termux_install
     tar -xf ubuntu.tar.xz
     mkdir -p patch
     echo -e "\e[32m[+] Downloading update patch...\e[0m"
-    wget https://github.com/Emulator-Team-2/Fex-Android/raw/main/patch/fex-emu-armv8.4_2407~1~j_arm64.deb -O patch/update.deb
+    wget https://github.com/Emulator-Team-2/Fex-Android/raw/main/patch/fex-emu-armv8.4_2408~j_arm64.deb -O patch/update.deb
     wget https://raw.githubusercontent.com/AllPlatform/Fex-Android/main/patch/ThunksDB.json -O patch/ThunksDB.json
     echo -e "\e[32m[+] Apply update patch...\e[0m"
     cd patch
